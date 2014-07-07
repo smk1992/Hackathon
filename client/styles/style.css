@@ -1,0 +1,29 @@
+body {
+  background: #f7f9fa;
+}
+
+
+.others, .user {
+  margin-bottom:0.5em;
+  border: 0.1em solid black;
+  height: 40%;  
+}
+
+.user {
+  padding-top: 0.5em;
+}
+
+.inside, .outside {
+  display: inline-block;
+  border: 0.1em solid black;
+  height:100%;
+  width:49.7%;
+}
+
+
+.user-input {
+  width:75%;
+  height: 1.5em;
+  font-size: 1.1em;
+
+}

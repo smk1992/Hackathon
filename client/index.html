@@ -1,0 +1,32 @@
+<html ng-app='Doorbell'>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shortly</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  </head>
+  <body>
+    <h1>Doorbell</h1>
+    <div class="user" ng-Controller="userController">
+      <center>
+        <input type="text" class="user-input" name="username" placeholder="NAME">
+        <input type="text" class="user-input" name="password" placeholder="Contact Info E-mail/Phone Number">
+      </center>
+    </div> 
+
+
+    <div class="others">
+      <div class="inside" ng-Controller="insideController"><h1>Inside</h1></div>
+      <div class="outside" ng-Controller="outsideController"><h1>Outside</h1></div>
+    </div> 
+
+    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
+    
+
+    <script src="bower_components/angular/angular.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/inside.js"></script>
+    <script src="scripts/outside.js"></script>
+    <script src="scripts/user.js"></script>
+  </body>
+</html>
