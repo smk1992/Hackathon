@@ -1,11 +1,10 @@
 var express = require('express');
-var io = require('socket.io');
 var requestHandler = require('./requestHandler.js');
 var port = 8080;
-
-var app = express.createServer();
-
-app.listen(port);
+var app = express();
+var server = require('http').Server();
+var io = require('socket.io')(server);
+server.listen(port);
 
 
 io.on('connection', function (socket) {
