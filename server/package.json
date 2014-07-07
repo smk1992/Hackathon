@@ -1,0 +1,19 @@
+{
+  "name": "index",
+  "version": "0.0.0",
+  "description": "Hackathon Server, Main ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "Salman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.5.1",
+    "socket.io": "^1.0.6"
+  }
+}
