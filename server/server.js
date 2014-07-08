@@ -10,34 +10,37 @@ var users = {inside:[{'username':'bob', 'contact':'bobo@gmail.com'},
                      {'username':'bob', 'contact':'bobo@gmail.com'},
                      {'username':'bob', 'contact':'bobo@gmail.com'}], outside:[]};
 
-var sockets = []
-io.on('connection', function (socket) {    
-  //socket.emit('news', {hello: 'world'});
-  sockets.push(socket);
-  console.log("yo mama so FAT");
-  socket.on('newUser', function (data) {      
-    var user = new User(data, this);
-    console.log("NEW USER", data, user.username, user.contact);
+
+var check = true;
+io.on('connection', function (socket) {        
+  socket.on('newUser', function (data) {          
+    var user = new User(data, this);    
     user.inWait();
+    socket.broadcast.emit('usersOutside', {'usersOutside':users.outside});        
   });
 
-  socket.emit('usersOutside', {'users':users.outside});
-  socket.emit('usersInside', {'users':users.inside});
+  socket.on('connect', function () {
+    console.log("is it funny?");
+    clearInterval(connect_interval);
+    connect_interval = 0;    
+  });
+    
+  socket.emit('usersOutside', {'usersOutside':users.outside});
+  socket.emit('usersInside', {'usersInside':users.inside}); 
 });
-
-
 
 
 var User = function (data, socket) {
   for (var key in data) {
-    this[key] = key[data];
-  }
+    this[key] = data[key];
+  } 
+
   this._socket = socket;
-  this._isInside = false;
+  this._isInsirde = false;
 }
 
 User.prototype.gotInisde = function () {
-  var check = users.outside.indexOf(this)
+  var check = users.outside.indexOf(this);
   if (check !== -1) {
     users.inside.splice(check, 1);
   }
@@ -47,10 +50,14 @@ User.prototype.gotInisde = function () {
 }
 
 User.prototype.inWait = function () {
-  var check = users.inside.indexOf(this)
+  var check = users.inside.indexOf(this)  
   if (check !== -1) {
     users.inside.splice(check, 1);
   }
+
   this._isInisde = false;
-  users.outside.push(this);
+  users.outside.push(this);    
+  console.log("here");
 }
+
+
