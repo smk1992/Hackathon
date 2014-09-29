@@ -1,0 +1,21 @@
+{
+  "name": "doorbell_app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/smk1992/Hackathon",
+  "authors": [
+    "Salman"
+  ],
+  "description": "HR DoorBell App",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.25",
+    "angular-socket-io": "~0.6.0"
+  }
+}

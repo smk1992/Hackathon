@@ -1,0 +1,23 @@
+{
+  "name": "doorbell_app",
+  "version": "1.0.0",
+  "description": "HR Door Bell App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smk1992/Hackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smk1992/Hackathon/issues"
+  },
+  "homepage": "https://github.com/smk1992/Hackathon",
+  "dependencies": {
+    "express": "^4.9.5",
+    "socket.io": "^1.1.0"
+  }
+}

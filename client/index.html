@@ -1,7 +1,7 @@
 <html ng-app='Doorbell'>
   <head>
     <meta charset="utf-8" />
-    <title>Shortly</title>
+    <title>Doorbell</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
   </head>
   <body>
@@ -9,7 +9,10 @@
     <div class="user" ng-Controller="userController">
       <center>
         <input type="text" class="user-input" name="username" placeholder="NAME">
-        <input type="text" class="user-input" name="password" placeholder="Contact Info E-mail/Phone Number">
+        <input type="text" class="user-input" name="password" placeholder="Contact Info E-mail/Phone Number"><br>
+        <button>Join</button><br>
+        <button>Leave</button><br>
+        <button>Got In</button><br>
       </center>
     </div> 
 
@@ -22,8 +25,8 @@
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     
     <!--- Libraries -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-socket-io/socket.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-socket-io/socket.js"></script>
 
     <!--- Scripts -->
     <script src="scripts/app.js"></script>
