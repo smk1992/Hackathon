@@ -1,3 +1,3 @@
-var app = angular.module('Doorbell', ['Doorbell.user', 'Doorbell.inside', 'Doorbell.outside']);
+var app = angular.module('Doorbell', ['Doorbell.controllers', 'Doorbell.services']);
 
 

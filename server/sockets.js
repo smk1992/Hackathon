@@ -18,7 +18,7 @@ var socketHandle = function (socket) {
   });
 
   socket.on('enter', function (data) {
-    var
+
   });
 
   socket.emit('usersOutside', {'usersOutside':users.getUsers('outside');
