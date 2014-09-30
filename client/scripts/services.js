@@ -1,7 +1,7 @@
 angular.module('Doorbell.services', [])
 
 
-.factory('socket', function ($rootScope) {
+.factory('socketFactory', function ($rootScope) {
   var socket = io.connect();
   return {
     on : function (e, callback) {

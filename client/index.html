@@ -16,26 +16,30 @@
       </center>
     </div>
 
-
-    <div class="users-status">
-      <div class="inside" ng-Controller="insideController">
+    <!-- Display all users inside and outside the building -->
+    <div class="users-status" ng-Controller="usersController">
+      <div class="inside">
         <h1>Inside</h1>
+        <div ng-repeat="user in users.inside">
+          <span>{user.name + " "} | {" " + user.contactInfo}</span>
+        </div>
       </div>
-      <div class="outside" ng-Controller="outsideController">
+      <div class="outside">
         <h1>Outside</h1>
+        <div ng-repeat="user in users.outside">
+          <span>{user.name + " "} | {" " + user.contactInfo}</span>
+        </div>
       </div>
     </div>
 
-    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-    
     <!--- Libraries -->
     <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-socket-io/socket.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+    <!--<script src="../bower_components/angular-socket-io/socket.js"></script>-->
 
     <!--- Scripts -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/inside.js"></script>
-    <script src="scripts/outside.js"></script>
-    <script src="scripts/user.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/services.js"></script>
   </body>
 </html>
